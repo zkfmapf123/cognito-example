@@ -2,12 +2,12 @@ import React from 'react'
 import { SignupHooks } from './hooks'
 
 const Signup = () => {
-  const sign = SignupHooks()
+  const signhooks = SignupHooks()
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(sign.getPassword(), sign.getUsername(), sign.getEmail())
-    sign.authAccess((err: string) => alert(err))
+    console.log(signhooks.getPassword(), signhooks.getUsername(), signhooks.getEmail())
+    signhooks.authAccess((err: string) => alert(err))
   }
 
   return (
@@ -16,17 +16,17 @@ const Signup = () => {
         {/** User Name */}
         <div>
           <label htmlFor="username">name</label>
-          <input value={sign.getUsername()} onChange={(e) => sign.setUsername(e.target.value)} />
+          <input value={signhooks.getUsername()} onChange={(e) => signhooks.setUsername(e.target.value)} />
         </div>
         {/** Email input */}
         <div>
           <label htmlFor="email">Email</label>
-          <input value={sign.getEmail()} onChange={(e) => sign.setEmail(e.target.value)} />
+          <input value={signhooks.getEmail()} onChange={(e) => signhooks.setEmail(e.target.value)} />
         </div>
         {/** Password input */}
         <div>
           <label htmlFor="password">Password</label>
-          <input value={sign.getPassword()} onChange={(e) => sign.setPassword(e.target.value)} />
+          <input value={signhooks.getPassword()} onChange={(e) => signhooks.setPassword(e.target.value)} />
         </div>
         <input type="submit" value="Submit" />
       </form>
