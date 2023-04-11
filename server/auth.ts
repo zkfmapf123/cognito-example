@@ -21,6 +21,7 @@ class AuthManager {
     })
   }
 
+  // 회원가입
   async signUp({ email, password, username }: UserAuthParams): Promise<Try<Exception, boolean>> {
     return new Promise((res, rej) => {
       this.userPool.signUp(username, password, [this.createAttribueList('email', email)], null, (err, _) => {
